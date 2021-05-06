@@ -1,0 +1,23 @@
+package p_Lover;
+
+
+
+
+ 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class wer {
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+  JFrame frm = new JFrame("그림 보기 예제");
+     ImageIcon ic  = new ImageIcon("C:\\pr_image\\heart.png");
+     JLabel lbImage1  = new JLabel(ic);
+   
+     frm.add(lbImage1);
+     frm.setVisible(true);
+     frm.setBounds(10, 10, 750, 750);
+     frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ }
+}

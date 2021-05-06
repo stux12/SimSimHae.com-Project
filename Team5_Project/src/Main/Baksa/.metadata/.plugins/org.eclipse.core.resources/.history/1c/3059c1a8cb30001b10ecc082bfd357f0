@@ -1,0 +1,88 @@
+package p_Lover;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+
+public class Lover_00 extends JFrame {
+
+	private JPanel contentPane;
+	private Image background=new ImageIcon(Lover_00.class.getResource("C:\\pr_image\\heart.jpg")).getImage();//배경이미지
+   	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Lover_00 frame = new Lover_00();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	public void paint(Graphics g) {//그리는 함수
+		g.drawImage(background, 0, 0, null);//background를 그려줌
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Lover_00() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 750, 750);
+		contentPane = new JPanel();
+		contentPane.setToolTipText("");
+		contentPane.setForeground(Color.WHITE);
+		contentPane.setBackground(Color.PINK);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		
+		JLabel lblNewLabel = new JLabel("\uC5F0\uC560\uB2A5\uB825 \uD14C\uC2A4\uD2B8");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 70));
+		lblNewLabel.setBounds(38, 105, 659, 124);
+		contentPane.add(lblNewLabel);
+		
+		JButton start = new JButton("S T A R T");
+		start.setForeground(Color.BLACK);
+		start.setBackground(Color.PINK);
+		start.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				dispose();
+				setVisible(false); 
+				new Q01().setVisible(true); 
+			}
+		});
+		start.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		start.setFont(new Font("굴림", Font.BOLD, 50));
+		start.setBounds(230, 411, 284, 87);
+		contentPane.add(start);
+	}
+}

@@ -1,0 +1,71 @@
+package p_Lover;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.SwingConstants;
+import javax.swing.JTextPane;
+
+public class Answer extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Answer01 frame = new Answer01();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Answer() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 750, 750);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("개*마이웨이 연애주의자");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("굴림", Font.PLAIN, 40));
+		lblNewLabel.setBounds(75, 72, 573, 91);
+		contentPane.add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("\uB2E4\uC2DC\uD558\uAE30");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();//지금창 해제 // 프레임을 닫는것
+				setVisible(false); // 지금 창 안보이게
+				new Lover_00().setVisible(true); //처음으로 이동
+			}
+		});
+		btnNewButton.setFont(new Font("굴림", Font.PLAIN, 26));
+		btnNewButton.setBounds(389, 563, 259, 68);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("#마이웨이 #혼자놀기만렙 #내사람홀릭  \r\n 연애도 인생도 일관성 있게 마이웨이! \r\n 서로의 생활을 존중하고 구속하지 않는 자유로운 연애를 좋아해요. 연애할 때에도 반드시 혼자만의 시간이 필요하고 그렇지 못하면 스트레스를 받아요. 상대의 감정이나 생각을 잘 읽는 편이지만 마이웨이답게 눈치를 보며 행동하지는 않아요. 처음엔 속마음을 잘 꺼내지 않지만 내 사람이 되었다고 생각하면 박찬호급 투머치토커로 돌변하는 스타일이기도 해요. 애정표현이나 스킨십은 다소 소극적인 편이라 좋아하는 사람이 생겨도 티가 잘 안 나요. 감정을 먼저 표현하려 조금 더 노력한다면 연애 성공률을 200% 끌어올릴 수 있을 거예요. ");
+		lblNewLabel_1.setBounds(75, 221, 586, 286);
+		contentPane.add(lblNewLabel_1);
+	}
+}

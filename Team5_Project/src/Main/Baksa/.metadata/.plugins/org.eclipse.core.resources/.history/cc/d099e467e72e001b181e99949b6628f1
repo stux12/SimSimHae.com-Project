@@ -1,0 +1,7 @@
+package p_Lover;
+
+public class Lover_01 {
+	
+	public int count;
+
+}

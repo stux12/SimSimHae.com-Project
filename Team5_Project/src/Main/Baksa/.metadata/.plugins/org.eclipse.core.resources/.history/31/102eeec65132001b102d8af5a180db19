@@ -1,0 +1,97 @@
+package p_Lover;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
+
+
+public class Lover_00 extends JFrame {
+
+	private JPanel contentPane;
+	ImageIcon img;
+   	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Lover_00 frame = new Lover_00(null);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 * @param imgbox 
+	 */
+	public Lover_00(JLabel imgbox) {
+		img = new ImageIcon("C:\\Users\\zero8\\Desktop\\java_t\\project_01\\project_Lover\\src\\p_image\\heart.png");
+		imgbox = new JLabel(img);
+		imgbox.setBounds(112, 182, 503, 326);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 750, 750);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setToolTipText("");
+		contentPane.setForeground(Color.WHITE);
+		contentPane.setBackground(Color.PINK);
+		contentPane.add(imgbox);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+	
+		
+		JLabel lblNewLabel = new JLabel("\uC5F0\uC560\uB2A5\uB825 \uD14C\uC2A4\uD2B8");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 70));
+		lblNewLabel.setBounds(39, 36, 659, 124);
+		contentPane.add(lblNewLabel);
+		
+		JButton start = new JButton("S T A R T");
+		start.setForeground(Color.PINK);
+		start.setBackground(Color.PINK);
+		start.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				dispose();
+				setVisible(false); 
+				new Q01().setVisible(true); 
+			}
+		});
+		start.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		start.setFont(new Font("굴림", Font.BOLD, 50));
+		start.setBounds(214, 536, 308, 56);
+		contentPane.add(start);
+		
+		JButton button = new JButton("돌아가기");
+		button.setForeground(Color.PINK);
+		button.setFont(new Font("굴림", Font.BOLD, 50));
+		button.setBackground(Color.PINK);
+		button.setBounds(214, 615, 308, 56);
+		contentPane.add(button);
+	}
+}

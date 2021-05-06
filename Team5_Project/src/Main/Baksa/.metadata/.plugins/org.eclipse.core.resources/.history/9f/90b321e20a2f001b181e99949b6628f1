@@ -1,0 +1,72 @@
+package p_Lover;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.SwingConstants;
+import javax.swing.JTextPane;
+
+public class Answer extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Answer frame = new Answer();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Answer() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 750, 750);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("개*마이웨이 연애주의자");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("굴림", Font.PLAIN, 40));
+		lblNewLabel.setBounds(75, 72, 573, 91);
+		contentPane.add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("\uB2E4\uC2DC\uD558\uAE30");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();//지금창 해제 // 프레임을 닫는것
+				setVisible(false); // 지금 창 안보이게
+				new Lover_00().setVisible(true); //처음으로 이동
+			}
+		});
+		btnNewButton.setFont(new Font("굴림", Font.PLAIN, 26));
+		btnNewButton.setBounds(389, 563, 259, 68);
+		contentPane.add(btnNewButton);
+		
+		JTextPane txtpnSd = new JTextPane();
+		txtpnSd.setText("sd");
+		txtpnSd.setBounds(85, 175, 563, 351);
+		contentPane.add(txtpnSd);
+	}
+}

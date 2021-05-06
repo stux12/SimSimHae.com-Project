@@ -1,0 +1,84 @@
+package p_Lover;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class Q12 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Q12 frame = new Q12();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Q12() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 750, 750);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Q12");
+		lblNewLabel.setFont(new Font("굴림", Font.PLAIN, 58));
+		lblNewLabel.setBounds(60, 60, 125, 52);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uC774\uBCA4\uD2B8\uB97C \uC900\uBE44\uD55C \uB098\uB97C \uC2E0\uB098\uAC8C \uD560 \uC5F0\uC778\uC758 \uCE6D\uCC2C\uC740? ");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("굴림", Font.PLAIN, 25));
+		lblNewLabel_1.setBounds(90, 124, 550, 250);
+		contentPane.add(lblNewLabel_1);
+		
+		JButton btnNewButton = new JButton("\uACE0\uB9C8\uC6CC \uC694\uC998 \uBC14\uC060\uD150\uB370 \uC5B8\uC81C \uC774\uB7F0\uAC78 \uC0DD\uAC01\uD588\uC5B4?");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();//지금창 해제 // 프레임을 닫는것
+				setVisible(false); // 지금 창 안보이게
+				new Answer().setVisible(true); //결과창으로 이동
+			}
+		});
+		btnNewButton.setFont(new Font("굴림", Font.PLAIN, 20));
+		btnNewButton.setBounds(128, 518, 474, 52);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\uC0AC\uB791\uD574 \uCD5C\uACE0\uC57C \uC644\uC804 \uAC10\uB3D9\uD588\uC5B4");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();//지금창 해제 // 프레임을 닫는것
+				setVisible(false); // 지금 창 안보이게
+				new Answer().setVisible(true); //결과창으로 이동
+			}
+		});
+		btnNewButton_1.setFont(new Font("굴림", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(128, 442, 474, 52);
+		contentPane.add(btnNewButton_1);
+	}
+}

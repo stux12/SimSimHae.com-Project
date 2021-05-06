@@ -1,0 +1,8 @@
+package p_Lover;
+
+public interface Lover_imple {
+
+    public static final int count;
+
+   
+}

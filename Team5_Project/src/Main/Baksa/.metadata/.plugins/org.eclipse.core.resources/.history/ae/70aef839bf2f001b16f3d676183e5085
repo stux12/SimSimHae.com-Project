@@ -1,0 +1,36 @@
+package p_Lover;
+
+import java.util.ArrayList;
+
+public class RanArray {
+	
+	
+	public static void ArraylistRandTest() {
+	     
+	    ArrayList<String> randomList = new ArrayList<String>();
+	    randomList.add("첫번째");
+	    randomList.add("두번째");
+	    randomList.add("세번째");
+	    randomList.add("네번째");
+	    randomList.add("다섯번째");
+	     
+	     
+	    ArrayList<String> randomComplete = new ArrayList<String>();     
+	     
+	    while ( randomList.size() != 0 ) {
+	        System.out.println(randomList.size()); //루프내에서 변화함
+	        int random = (int)(Math.random()*randomList.size());
+	        randomComplete.add( randomList.get(random) );
+	        randomList.remove(random); //remove 로 인해서 카운터가 변화
+	    }
+	     
+	     
+	    for ( String s: randomComplete ) {
+	        System.out.println(s);
+	    }
+	     
+	}
+
+
+	
+}
